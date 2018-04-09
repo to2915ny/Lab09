@@ -5,7 +5,7 @@ package edu.handong.csee.java.lab09;
  *
  */
 public class SalesAssociate {
-	
+
 	private String name = ""; //declare name and
 	private double sales; //declare sales as private so information cannot be altered. 
 	/**This method gets name from class MarketAnalyzer and stores into local variable name
@@ -38,5 +38,5 @@ public class SalesAssociate {
 	{
 		return name;//returns name
 	}
-	
+
 }
