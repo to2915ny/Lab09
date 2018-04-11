@@ -8,9 +8,9 @@ import java.util.Scanner;
  *
  */
 public class MarketAnalyzer {
-	private double highestSales; //declare private higestsales so this variable cannot be altered
-	private double averageSales; //This is a fixed variable that cannot be altered
-	private SalesAssociate[] team; //array SalesAssociate[] is named team this also cannot be altered
+	private double highestSales; //declare private higestsales so this variable so it be accessed only by setters and getters from outside
+	private double averageSales; //This is a fixed variable.
+	private SalesAssociate[] team; //array SalesAssociate[] is named team
 	/**
 	 * This method gets the number of salesmen and sets name and sales in the SalesAssociate class
 	 */
@@ -58,7 +58,7 @@ public class MarketAnalyzer {
 				highestSales = team[i].getSales();// put that value into highestSales and continue the loop
 		}
 		this.highestSales = highestSales; // highestsales is not smaller than one's sale then that the highest value
-		//put this value into local variable highestSales which is declared as private
+		//put this value into instance variable highestSales which is declared as private
 
 	}
 	/**
