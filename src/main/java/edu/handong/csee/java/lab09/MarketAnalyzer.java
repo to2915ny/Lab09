@@ -18,37 +18,37 @@ public class MarketAnalyzer {
 	 * This method gets the number of salesmen and sets name and sales in the SalesAssociate class
 	 */
 	public void getData() {
-		
-		
-		
+
+
+
 		Scanner keyboard = new Scanner(System.in);//instantiate scanner so data can be typed in
 
 		boolean done = false;//boolean done variable is set false
 		int i= 0; // int i variable declared
-			while(!done) { //while done = true
+		while(!done) { //while done = true
 			SalesAssociate asso = new SalesAssociate(); //instantiate class SalesAssociate to asso
 			System.out.println("Enter data for associate number : " + (i+1)); //Enter data for 1st salesment. i+1 because array starts with 0
 			i++;//increment i so next salesman number can be print out
 			this.length = i;//stores the number of salesmen
 			System.out.println("Name ? :  ");//tell user to enter name
-			
+
 			String name = keyboard.nextLine(); //store whats typed into string variable name
 			asso.setName(name);// now store name into class SalesAssociate using the setters
 			System.out.println("Sales ? :  ");//print out sales?
-			
+
 			double sales = keyboard.nextDouble();//store value sales
 			asso.setSales(sales);//store sales into SalesAssociate using setters
 			team.add(asso);//store name and sales into arraylist
 			System.out.println("More items for the list? ");//ask user to add more salesmen to the array 
-			
+
 			keyboard.nextLine();//use netLine() twice so it reads whats in the buffer first
 			String ans = keyboard.nextLine();//read from keyboard
 			if(!ans.equalsIgnoreCase("yes"))//if user types yes whether its in caps or undercaps
 				done = true;//done is equal to true and the loop continues
-			
-			
+
+
 		}
-			
+
 	}
 	/**
 	 * This method calculates the average of total sales of salemen
@@ -69,7 +69,7 @@ public class MarketAnalyzer {
 		for(int i =0 ; i< this.length; i++) //for is declared once again so all the sales for salesmen can be read
 		{
 			if(highestSales < team.get(i).getSales()); // if highestsales smaller then that salesman's sales
-				highestSales = team.get(i).getSales();// put that value into highestSales and continue the loop
+			highestSales = team.get(i).getSales();// put that value into highestSales and continue the loop
 		}
 		this.highestSales = highestSales; // highestsales is not smaller than one's sale then that the highest value
 		//put this value into instance variable highestSales which is declared as private
@@ -116,7 +116,7 @@ public class MarketAnalyzer {
 		analyzer.getData();//run method get data
 		analyzer.computeHighestSales();//then compute the highestsales
 		analyzer.computeAverage();//then compute the average
-		
+
 		analyzer.printData();//print the result
 
 	}
