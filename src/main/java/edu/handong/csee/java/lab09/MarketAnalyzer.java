@@ -51,30 +51,22 @@ public class MarketAnalyzer {
 
 	}
 	/**
-	 * This method calculates the average of total sales of salemen
+	 * This method calculates the average of total sales of salemen and the sales of higestsalesmen
 	 */
-	public void computeAverage(){
+	public void cal(){
+		double highestSales = 0; //declare double higestsales
 		double sum =0; //declare double sum
 		for(int i = 0; i < this.length; i++)//for i =0 , and i is smaller then arraylist size; i increments by 1
 		{
 			sum = sum + team.get(i).getSales();// sum = sum + team.get(i).getSales() -> add all the sales stored in all salesmen array
-		}
-		averageSales = sum/this.length; // store sum/length of team in variable averageSales
-	}
-	/**
-	 * This method calculate the highestSales from all the salesmen
-	 */
-	public void computeHighestSales(){
-		double highestSales = 0;//declare variable highestslaes
-		for(int i =0 ; i< this.length; i++) //for is declared once again so all the sales for salesmen can be read
-		{
 			if(highestSales < team.get(i).getSales()); // if highestsales smaller then that salesman's sales
 			highestSales = team.get(i).getSales();// put that value into highestSales and continue the loop
 		}
 		this.highestSales = highestSales; // highestsales is not smaller than one's sale then that the highest value
 		//put this value into instance variable highestSales which is declared as private
-
+		averageSales = sum/this.length; // store sum/length of team in variable averageSales
 	}
+
 	/**
 	 * This method prints out the final results - AverageSales, Higestsales and the rest sales compared with average
 	 */
@@ -114,8 +106,7 @@ public class MarketAnalyzer {
 	public static void main(String[] args) {
 		MarketAnalyzer analyzer = new MarketAnalyzer();//instantiate the class
 		analyzer.getData();//run method get data
-		analyzer.computeHighestSales();//then compute the highestsales
-		analyzer.computeAverage();//then compute the average
+		analyzer.cal(); // run method cal
 
 		analyzer.printData();//print the result
 
